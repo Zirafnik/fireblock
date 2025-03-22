@@ -2,7 +2,9 @@
 
 ## Overview
 
-This script allows users to block or whitelist specific URLs or paths in Firefox by modifying the `policies.json` file. Unlike traditional website blockers, it does not block entire domains by default, giving users fine-grained control over what is restricted.
+This script allows users to block or whitelist specific URLs or paths in Firefox by modifying the `policies.json` file.
+
+**Unlike traditional website blockers, it does not block entire domains by default, giving users fine-grained control over what is restricted.**
 
 ## Features
 

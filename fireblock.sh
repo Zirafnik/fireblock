@@ -1,9 +1,7 @@
 #!/bin/bash
 
-LOCATION=".mozilla/firefox/distribution/policies.json"
-# LOCATION="/etc/firefox/policies/policies.json" # System-wide setting
-
-POLICY_FILE="$HOME/$LOCATION"
+POLICY_FILE="/usr/lib/firefox/distribution/policies.json"
+# POLICY_FILE="/etc/firefox/policies/policies.json" # System-wide setting
 
 # Ensure the policy file exists
 mkdir -p "$(dirname "$POLICY_FILE")"
@@ -44,6 +42,6 @@ for SITE in "${SITES[@]}"; do
 done
 
 # Write updated policies back
-jq ".policies.WebsiteFilter.Block = $BLOCKED_SITES | .policies.WebsiteFilter.Exceptions = $EXCEPTIONS" "$POLICY_FILE" > "${POLICY_FILE}.tmp" && mv "${POLICY_FILE}.tmp" "$POLICY_FILE"
+jq ".policies.WebsiteFilter.Block = $BLOCKED_SITES | .policies.WebsiteFilter.Exceptions = $EXCEPTIONS" "$POLICY_FILE" | sudo tee "${POLICY_FILE}.tmp" && sudo mv "${POLICY_FILE}.tmp" "$POLICY_FILE"
 
 echo "Updated policies in $POLICY_FILE"

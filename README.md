@@ -26,7 +26,7 @@ brew install jq      # macOS
 
 1. Save the script as `fireblock` in `/usr/local/bin/`:
       ```sh
-      sudo mv fireblock.sh /usr/local/bin/fireblock
+      sudo cp fireblock.sh /usr/local/bin/fireblock
       sudo chmod +x /usr/local/bin/fireblock
       ```
 2. Ensure `/usr/local/bin/` is in your `$PATH` (it usually is by default):
@@ -84,7 +84,7 @@ For system-wide policies (root access required):
 
 - **Restart Firefox for changes to take effect.**
 - The script ensures no duplicate entries are added.
-- For enterprise or system-wide settings, update the `LOCATION` variable in the script accordingly.
+- For enterprise or system-wide settings, update the `POLICY_FILE` variable in the script accordingly.
 
 ## References
 

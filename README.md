@@ -9,7 +9,7 @@ This script allows users to block or whitelist specific URLs or paths in Firefox
 - Block specific URLs or paths in Firefox
 - Add exceptions (whitelist URLs or paths)
 - Prevent duplicate entries
-- Works on a per-user basis (`~/.mozilla/firefox/distribution/policies.json`)
+- Works on a per-user basis (`/usr/lib/firefox/distribution/policies.json`)
 - Can be adapted for system-wide policies
 
 ## Prerequisites
@@ -71,7 +71,7 @@ This adds `example.com/specific-page` to the exceptions list.
 The policy file is located at:
 
 ```sh
-~/.mozilla/firefox/distribution/policies.json
+/usr/lib/firefox/distribution/policies.json
 ```
 
 For system-wide policies (root access required):
